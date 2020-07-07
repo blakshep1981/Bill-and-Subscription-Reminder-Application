@@ -1,8 +1,0 @@
-CREATE DATABASE IF NOT EXISTS billpay;
-USE billpay;
-
-DROP TABLE IF EXISTS bills;
-
--- CREATE TABLE bills (
---     id int NOT NULL AUTO_INCREMENT,
--- );
