@@ -1,0 +1,19 @@
+{
+  "name": "bill-and-subcription-reminder-application",
+  "version": "1.0.0",
+  "description": "README.md",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blakshep1981/Bill-and-Subcription-Reminder-Application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blakshep1981/Bill-and-Subcription-Reminder-Application/issues"
+  },
+  "homepage": "https://github.com/blakshep1981/Bill-and-Subcription-Reminder-Application#readme"
+}
