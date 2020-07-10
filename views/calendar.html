@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
     <link rel="stylesheet" href="public/css/style.css">
+    
 
 </head>
 <body>
@@ -19,7 +21,7 @@
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><a href="#">Calendar View</a></li>
                 <li><a href="subscriptions.html">Current Subscriptions</a></li>
-                <li><a href="newSubscription.html">Add New Subscription</a></li>
+                <li><a href="newSubs.html">Add New Subscription</a></li>
             </ul>
     
         </div>
@@ -31,30 +33,11 @@
     <!-- calander visual -->
     <!-- 5 X 7 grid for calendar, Mon thru Fri, all days -->
   
-    
 
-    <div class="uk-grid-collapse uk-grid-row-large uk-child-width-1-6@s uk-text-center" uk-grid>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-body">Item</div>
-        </div>
-    </div>
+    <div id="app-calendar"></div>
+
+
+    <script src="public/js/calendar.js"></script>
+
 </body>
 </html>
