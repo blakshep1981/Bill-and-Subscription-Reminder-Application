@@ -3,4 +3,5 @@ DROP TABLE IF EXISTS bills;
 -- creates the bills database --
 CREATE DATABASE bills;
 
--- USE billpay;
+-- USE bills --
+
