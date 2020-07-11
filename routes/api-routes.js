@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
+    console.log("post post sign up")
   app.post("/api/signup", function (req, res) {
     db.User.create({
       email: req.body.email,
@@ -12,4 +13,7 @@ module.exports = function (app) {
         res.status(401).json(err)
     });
   });
+
+
+
 };
