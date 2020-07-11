@@ -5,6 +5,6 @@ module.exports = function(app){
         if(req.user){
             res.redirect("/user");
         }
-        res.sendFile(path.join(__dirname, "../public/...html/handlebars"))// needs handlebars page
+        res.sendFile(path.join(__dirname, "../views/calendar.html"))// needs handlebars page
     });
 }
