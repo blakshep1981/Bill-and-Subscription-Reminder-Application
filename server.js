@@ -25,7 +25,7 @@ app.use(express.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({ defaultLayout: "main" })); //handlebars startoff page
 app.set("view engine", "handlebars");
 
 
@@ -36,8 +36,9 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 //require("./routes/post-api-routes.js")(app);
-require("./routes/api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/sub-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
