@@ -21,7 +21,7 @@ $("#sub-submit").on("click", function(event) {
   
         row.append("<p>" + newSub.name + " Subscription: </p>");
         row.append("<p>" + newSub.body + "</p>");
-        row.append("<p>At " + date(newSub.).format("YYYY-MM-DD") + "</p>");
+        row.append("<p>At " + date(newSub).format("YYYY-MM-DD") + "</p>");
   
         $("#chirp-area").prepend(row);
   
