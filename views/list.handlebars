@@ -1,0 +1,39 @@
+ <link rel="stylesheet" href="public/css/style.css">
+
+<nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+    
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Calendar View</a></li>
+                <li><a href="subscriptions.html">Current Subscriptions</a></li>
+                <li><a href="newSubs.html">Add New Subscription</a></li>
+            </ul>
+    
+        </div>
+    </nav>
+
+<h1>Bills/Subscriptions</h1>
+
+<h2>Bills</h2>
+
+<ul>
+  {{#each bill}}
+  <li>
+       <p>Bill: {{this.bill}}</p>
+       <p>Amount: {{this.amount}}</p>
+       <p>Due Date: {{this.dueDate}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<h2>Subscriptions</h2>
+
+<ul>
+  {{#each subscription}}
+  <li>
+       <p>Subscription: {{this.subscription}}</p>
+       <p>Amount: {{this.amount}}</p>
+       <p>Due Date: {{this.dueDate}}</p>
+  	</li>
+  {{/each}}
+</ul>
