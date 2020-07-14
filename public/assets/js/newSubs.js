@@ -1,8 +1,9 @@
 // Code here handles what happens when a user submits a new subscription on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
-
+$(document).ready(function(){
+  var formSubmit = $("#subsForm") 
 // when user clicks add-btn
-$("#sub-submit").on("click", function(event) {
+$("#submit").on("click", function(event) {
   event.preventDefault();
 
   // Make a newSub object
@@ -13,7 +14,7 @@ $("#sub-submit").on("click", function(event) {
   };
 
   // send an AJAX POST-request with jQuery
-  $.post("/api/bills", newSub)
+  $.post("/api/subs", newSub)
     // on success, run this callback
     .then(function(data) {
       // log the data we found
@@ -27,3 +28,4 @@ $("#sub-submit").on("click", function(event) {
   $(".newAmount").val("");
   $(".dueDate").val("");
 });
+})
