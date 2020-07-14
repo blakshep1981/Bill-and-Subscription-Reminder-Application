@@ -9,11 +9,11 @@ $("#sub-submit").on("click", function(event) {
   const newSub = {
     name: $(".newName").val().trim(),
     amount: $(".newAmount").val().trim(),
-    dueDate: date().format("YYYY-MM-DD")
+    dueDate: moment().format("YYYY-MM-DD HH:mm:ss")
   };
 
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newSub)
+  $.post("/api/bills", newSub)
     // on success, run this callback
     .then(function(data) {
       // log the data we found
