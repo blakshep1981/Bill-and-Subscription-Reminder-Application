@@ -13,15 +13,13 @@ module.exports = function(app){
 
   app.get("/calendar", function(req, res) {
     if (req.user) {
-      res.render("calendar");
-    }    
+    }
+    res.render("calendar");
   });
 
-  app.get("/subscriptions", function(req, res) {
+  app.get("/subscription", function(req, res) {
     if (req.user) {
-      res.render(subscriptions);
-    }    
+    }
+     res.render(subscription);
   });
-
-
 }
