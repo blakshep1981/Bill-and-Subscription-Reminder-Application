@@ -12,16 +12,14 @@ module.exports = function(app){
   });
 
   app.get("/calendar", function(req, res) {
-    // if (req.user) {
-       res.render("calendar");
-    // }    
+    if (req.user) {
+    }
+    res.render("calendar");
   });
 
-  app.get("/subscriptions", function(req, res) {
-    // if (req.user) {
-       res.render(subscriptions);
-    // }    
+  app.get("/subscription", function(req, res) {
+    if (req.user) {
+    }
+     res.render(subscription);
   });
-
-
 }
