@@ -20,6 +20,6 @@ module.exports = function(app){
   app.get("/subscription", function(req, res) {
     if (req.user) {
     }
-     res.render(subscription);
+     res.render("subscription");
   });
 }
