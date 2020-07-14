@@ -1,18 +1,27 @@
 const path = require("path");
 
 module.exports = function(app){
-    app.get("/", function(req, res){
-        if(req.user){
-            res.redirect("/user");
-        }
-        res.render("calendar")
-        //res.sendFile(path.join(__dirname, "../views/layouts/main"))// needs handlebars page
-    });
+// Each of the below routes just handles the HTML page that the user gets sent to.
 
-    app.get("/newsub", function(req, res){
-        if(req.user){
-            res.redirect("/user");
-        }
-        res.render("list")
-    })
+  // index route loads view.html
+  app.get("/", function(req, res) {
+    if (req.user) {
+      res.render("index");    
+    }
+    res.render("login")    
+  });
+
+  app.get("/calendar", function(req, res) {
+    if (req.user) {
+      res.render("calendar");
+    }    
+  });
+
+  app.get("/subscriptions", function(req, res) {
+    if (req.user) {
+      res.render(subscriptions);
+    }    
+  });
+
+
 }
