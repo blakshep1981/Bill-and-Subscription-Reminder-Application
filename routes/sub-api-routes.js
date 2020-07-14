@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function(app){
 console.log("sub route api")
 app.get("/api/bills",function(req,res){
-    var query = {};
-    if (req.query){
-        query = req.query;
+    var subs = {};
+    if (req.subs){
+        subs = req.subs;
     }
     db.Subscription.findAll({
-        where: query,
+        where: subs,
         include: [db.User],
     }).then(function(dbSub){
         res.json(dbSub)
