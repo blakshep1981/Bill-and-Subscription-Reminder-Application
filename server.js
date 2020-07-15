@@ -5,6 +5,9 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
@@ -22,6 +25,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
@@ -32,6 +36,11 @@ app.set("view engine", "handlebars");
 // Static directory
 // handles stablilizing all html, css and javascript static
 app.use(express.static("public"));
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================

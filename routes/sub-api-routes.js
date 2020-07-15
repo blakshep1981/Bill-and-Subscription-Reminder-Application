@@ -2,6 +2,7 @@ var db = require("../models");
 
 module.exports = function(app){
 console.log("sub route api")
+
 app.get("/api/subs",function(req,res){
     var subs = {};
     if (req.subs.user_id){
