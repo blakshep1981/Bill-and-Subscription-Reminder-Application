@@ -1,14 +1,17 @@
 const path = require("path");
 
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app){
 // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
   app.get("/", function(req, res) {
+    // If the user already has an account send them to the calendar page
     if (req.user) {
-      res.render("index");    
+      res.render("signup");
     }
-    res.render("index")    
+    res.render("index");
   });
 
   app.get("/calendar", function(req, res) {

@@ -1,7 +1,15 @@
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function (app) {
   console.log("post post sign up");
+
+  // Using the passport.authenticate middleware with our local strategy.
+  // If the user has valid login credentials, send them to the members page.
+  // Otherwise the user will be sent an error
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
+  });
 
   app.get("/api/users", function (req, res) {
     db.User.findAll({ include: [db.Subscription] }).then(function (dbUser) {
