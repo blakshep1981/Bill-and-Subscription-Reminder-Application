@@ -8,7 +8,7 @@ module.exports = function(app){
     if (req.user) {
       res.render("index");    
     }
-    res.render("login")    
+    res.render("index")    
   });
 
   app.get("/calendar", function(req, res) {

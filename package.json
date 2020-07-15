@@ -25,6 +25,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.41.2",
+    "sequelize-cli": "^6.2.0"
   }
 }
