@@ -3,34 +3,35 @@
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><a href="#">Add New Subscription</a></li>
                 <li><a href="/calendar">Calendar View</a></li>
-                <li><a href="/login">Current Subscriptions</a></li>
+                <li><a href="/index">Current Subscriptions</a></li>
             </ul>
         </div>
     </nav>
 
-    <form>
-        <fieldset class="uk-fieldset">
+    <form class="uk-fieldset" id="subsForm">
+       <!-- <fieldset class="uk-fieldset"> -->
     
             <legend class="uk-legend">New Subscription</legend>
-    
+
             <div class="uk-margin">
-                <h5>Subscription Name:</h5>
-                <input class="sign-up-input uk-input newName uk-width-1-3@m" type="text" placeholder="Input">
+                <h5>Subscription or Billing Name:</h5>
+                <input class="sign-up-input uk-input newName uk-width-1-3@m" id="subName" type="text" placeholder="Bill or Subscripton name">
             </div>
             <div class="uk-margin">
                 <h5>Amount:</h5>
-                <input class="sign-up-input newAmount uk-input  uk-width-1-3@m" type="text" placeholder="Input">
+                <input class="sign-up-input newAmount uk-input  uk-width-1-3@m" id="amount" type="text" placeholder="Cost/Fee">
             </div>
             <div class="uk-margin">
                 <h5>Due Date:</h5>
-                <input class="sign-up-input uk-input dueDate uk-width-1-3@m" type="text" placeholder="Input">
+                <input class="sign-up-input uk-input dueDate uk-width-1-3@m" id="dueDate"type="text" placeholder="Date">
             </div>
+            <!--
             <div class="uk-margin uk-width-1-3@m">
                 <textarea class="uk-textarea" rows="4" placeholder="Extra Notes"></textarea>
-            </div>
-            <button id="sub-submit" class="btn btn-lg pull-right">Add Subscription!</button>
-   
-        </fieldset>
+            </div> -->
+            <button id="submit" class="uk-button uk-button-default">Add Subscription!</button>
+
+     <!--   </fieldset> -->
     </form>
     <script src="/assets/js/newSubs.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
