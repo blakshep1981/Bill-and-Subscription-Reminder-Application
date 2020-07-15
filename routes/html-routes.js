@@ -23,9 +23,10 @@ module.exports = function(app){
     res.render("list");
   });
 
-  app.get("/subscription", function(req, res) {
+  app.get("/signup", function(req, res) {
     if (req.user) {
     }
-     res.render("subscription");
+     res.render("signup");
   });
+  
 }
