@@ -28,5 +28,11 @@ module.exports = function(app){
     }
      res.render("signup");
   });
+
+  app.get("/subscription", function(req, res) {
+    if (req.user) {
+    }
+     res.render("subscription");
+  });
   
 }
