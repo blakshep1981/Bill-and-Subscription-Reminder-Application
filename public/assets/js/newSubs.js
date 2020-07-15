@@ -1,31 +1,41 @@
 // Code here handles what happens when a user submits a new subscription on the form.
 // Effectively it takes the form inputs then sends it to the server to save in the DB.
 $(document).ready(function(){
-  var formSubmit = $("#subsForm") 
+  var subInput = $("#subName");
+  var amountInput = $("#amount");
+  var dueInput = $("#dueDate");
+  var formSubmit = $("#subsForm"); 
 // when user clicks add-btn
-$("#submit").on("click", function(event) {
-  event.preventDefault();
-
+$(formSubmit).on("submit", submitingForm)
+  
+function submitingForm(event){
+event.preventDefault();
+console.log("your on the click")
   // Make a newSub object
   const newSub = {
-    name: $(".newName").val().trim(),
-    amount: $(".newAmount").val().trim(),
-    dueDate: moment().format("YYYY-MM-DD HH:mm:ss")
+    name: subInput.val().trim(),
+    amount: amountInput.val().trim(),
+    dueDate: dueInput.val().trim()
   };
 
-  // send an AJAX POST-request with jQuery
-  $.post("/api/subs", newSub)
-    // on success, run this callback
-    .then(function(data) {
-      // log the data we found
-      console.log(data);
-      // tell the user we're adding a subscription with an alert window
-      alert("Adding subscription...");
-    });
+    submitSubscription(newSub);
 
   // empty each input box by replacing the value with an empty string
-  $(".newName").val("");
-  $(".newAmount").val("");
-  $(".dueDate").val("");
-});
+  // $(".newName").val("");
+  // $(".newAmount").val("");
+  // $(".dueDate").val("");
+};
 })
+
+function submitSubscription(Sub){
+  // send an AJAX POST-request with jQuery
+  $.post("/api/subs", Sub, function(){
+    //window.location.href = "/blog";
+  })
+    // on success, run this callback
+ 
+      // log the data we found
+      console.log(Sub);
+      // tell the user we're adding a subscription with an alert window
+      alert("Adding subscription...");
+  };

@@ -25,8 +25,8 @@ app.get("/api/subs/:id", function(req,res){
     });
 });
 
-app.post("/api/sub",function(req, res){
-    db.Post.create(req.body).then(function(dbSubs){
+app.post("/api/subs",function(req, res){
+    db.Subscription.create(req.body).then(function(dbSubs){
         res.json(dbSubs);
     });
 });

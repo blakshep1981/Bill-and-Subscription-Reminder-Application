@@ -18,7 +18,7 @@ module.exports= function(sequelize, DataTypes) {
     // A Subscription can't be created without a User due to the foreign key constraint
     Subscription.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
