@@ -1,15 +1,19 @@
-    <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-    
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">Calendar View</a></li>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
 
-                <li><a href="/list">Current Subscriptions</a></li>
-                <li><a href="/subscription">Add New Subscription</a></li>
+        <ul class="uk-navbar-nav">
+            <li><a href="/calendar">Calendar View</a></li>
+            <li class="uk-active"><a href="/list">Current Subscriptions</a></li>
+            <li><a href="/subscription">Add New Subscription</a></li>
 
-            </ul>
-    
-        </div>
-    </nav>
+        </ul>
 
-    <div> Subscriptions List!</div>
+    </div>
+</nav>
+
+<div> Subscriptions List!</div>
+
+<ul>
+    {{#each bills}}
+    {{/each}}
+</ul>
