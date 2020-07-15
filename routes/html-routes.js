@@ -17,6 +17,12 @@ module.exports = function(app){
     res.render("calendar");
   });
 
+  app.get("/list", function(req, res) {
+    if (req.user) {
+    }
+    res.render("list");
+  });
+
   app.get("/subscription", function(req, res) {
     if (req.user) {
     }
