@@ -28,14 +28,22 @@ console.log("your on the click")
 })
 
 function submitSubscription(Sub){
+  var err = false;
   // send an AJAX POST-request with jQuery
   $.post("/api/subs", Sub, function(){
     //window.location.href = "/blog";
+  
   })
     // on success, run this callback
  
       // log the data we found
       console.log(Sub);
       // tell the user we're adding a subscription with an alert window
-      alert("Adding subscription...");
+     //alert("Adding subscription...");
+      if(err){
+      return alert("please fill out input fields to add a subscription");
+   
+      }else{
+        window.location.href = "/list";
+      }
   };

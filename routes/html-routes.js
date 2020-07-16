@@ -30,6 +30,7 @@ module.exports = function(app){
 
   app.get("/signup", function(req, res) {
     if (req.user) {
+        res.render("calendar")
     }
      res.render("signup");
   });
