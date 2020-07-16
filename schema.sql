@@ -9,7 +9,7 @@ CREATE TABLE subscriptions
 (
 	id int NOT NULL AUTO_INCREMENT,
 	subscription varchar(255) NOT NULL,
-	amount INT NOT NULL,
+	amount DECIMAL(10,2) NOT NULL,
     dueDate DATE,
 	PRIMARY KEY (id)
 );
