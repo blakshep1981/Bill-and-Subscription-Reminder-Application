@@ -12,7 +12,7 @@ var passport = require("./config/passport");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8081;
 
 // Requiring our models for syncing
 // adding and updating to our database
@@ -42,6 +42,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Routes
 // =============================================================
 //require("./routes/post-api-routes.js")(app);
@@ -56,3 +57,4 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+

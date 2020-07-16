@@ -4,24 +4,31 @@ module.exports = function(app){
 console.log("sub route api")
 
 app.get("/api/subs",function(req,res){
+   
     var subs = {};
-    if (req.subs.user_id){
-        subs.UserId = req.subs.user_id;
+    //console.log(req.subs)
+    if (req.subs.subs_id){
+        console.log(req.subs)
+        subs.name = req.subs.subs_id;
     }
-    db.Subscription.findAll({
-        where: subs,
-        include: [db.User],
+    db.Subscription.findAll({ //shmaybe the association of tables that doesnt give AUthorId=Author . id
+        where: subs//,
+      //  include: [db.Subscription], //grabbing now from subdatabase
     }).then(function(dbSubs){
         res.json(dbSubs)
+       // console.log("dummy data")
+        res.render('list', {res: dbSubs});
     });
 });
+
+
 app.get("/api/subs/:id", function(req,res){
     db.Subscription.findOne({
         where: {
             id: req.params.id
         },
         include: [db.User]
-    }).then(function(dbPost){
+    }).then(function(dbSubs){
         res.json(dbSubs)
     });
 });
