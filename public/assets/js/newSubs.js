@@ -32,8 +32,8 @@ function submitSubscription(Sub){
   // send an AJAX POST-request with jQuery
   $.post("/api/subs", Sub, function(){
     //window.location.href = "/blog";
-  
-  })
+  //console.log(Sub)
+
     // on success, run this callback
  
       // log the data we found
@@ -46,4 +46,5 @@ function submitSubscription(Sub){
       }else{
         window.location.href = "/list";
       }
+    });
   };

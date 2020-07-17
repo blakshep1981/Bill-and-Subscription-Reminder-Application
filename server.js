@@ -12,7 +12,7 @@ var passport = require("./config/passport");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8081;
+var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 // adding and updating to our database
