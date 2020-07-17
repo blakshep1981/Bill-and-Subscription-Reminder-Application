@@ -39,7 +39,7 @@ module.exports = function(app){
     }).then(function(dbSubs){
       
       console.log("we go the data now lets move");
-         console.log(dbSubs)
+        // console.log(dbSubs)
       res.render("list",{dbSubs: dbSubs});
   
  
