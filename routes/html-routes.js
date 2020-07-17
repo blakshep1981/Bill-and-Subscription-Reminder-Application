@@ -11,10 +11,10 @@ module.exports = function(app){
     // If the user already has an account send them to the calendar page
     console.log("above if block");
     if (req.user) {
-      res.render("signup");
+      res.render("index");
     }
     console.log("below if block");
-    res.render("/");
+    res.render("index");
   });
 
   app.get("/calendar", function(req, res) {
