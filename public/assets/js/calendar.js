@@ -52,8 +52,6 @@ function renderCalendar() {
         monthDays.innerHTML = days;
     };
 
-    //add a card div to every day that does not display
-    //toggle display onclick
     //pull all db info into an array in this page, display all that are in this month
     //    maybe make sidebar one that lists all dues and bills due that month
     //add icon or color or somehting to days with a bill/other due on that day
@@ -86,10 +84,10 @@ document.querySelector(".next").addEventListener("click", () => {
 //<div class="uk-card pop-up uk-card-default"></div>
 
   function getSubs() {
-    $.get("/api/users", function(data) {
+    $.get("/api/subs", function(data) {
       subs = data; //used to be todos
 
-        console.log(subs);
+        console.log(subs[0].name);
     //   initializeRows();
     });
   }

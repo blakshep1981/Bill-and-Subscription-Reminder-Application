@@ -110,3 +110,14 @@
   .today {
     background-color: lightslategray;
   }
+
+  .side-bar {
+    height: 100%;
+    display: flex;
+  }
+
+  /* New Subs Form */
+  form {
+    align-content: center;
+    text-align: center;
+  }

@@ -7,13 +7,26 @@
             <li class="uk-active"><a href="/calendar">Calendar View</a></li>
             <li><a href="/list">Current Subscriptions</a></li>
             <li><a href="/subscription">Add New Subscription</a></li>
-            <li><a href="/logout"><button>Logout</button></a></li>            
+            <li><a href="/logout"><button class="uk-button uk-text-bold uk-button-default">Logout</button></a></li>            
         </ul>
 
     </div>
 </nav>
 
+
     <div class="container">
+
+        {{!-- <div class="side-bar">
+            <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                {{#each dbSubs}}
+                    <h3 class="uk-card-title">{{this.name}}</h3>
+                    <p><span class="uk-text-success">{{this.amount}} $</span>/Month</p>
+                    <p> <span class="uk-text-uppercase uk-text-bold">Due on:</span> {{this.dueDate}} </p>
+                    <hr class="uk-divider-icon">
+                    {{/each}}
+            </div>
+        </div> --}}
+
         <div class="calendar">
             <div class="month">
                 <i class="fas fa-angle-left previous"></i>
