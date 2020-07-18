@@ -1,44 +1,11 @@
-// const calendar = document.querySelector("#app-calendar");
-
-// for(let day = 1; day <= 31; day ++) {
-//     // const date = Date.now();
-//     // const options = { weekday: "short"};
-//     // const dayName = new Intl.DateTimeFormat("en-US", options).format(date);
-//     const dayName = getDayName(day);
-//     const weekend = isWeekend(day);
-//     const UIKit = "uk-card uk-card-default uk-card-body";
-//     // if weekend === true {return "weekend"} else {return ""};
-//     // console.log(weekend ? "weekend" : "");
-//     calendar.insertAdjacentHTML("beforeend", `<div class="day ${weekend ? "weekend" : ""}"><div class = "name">${dayName}</div>${day}</div>`);
-// }
-
-// document.querySelectorAll("#app-calendar .day").forEach((day) => {
-//     day.addEventListener("click", (event) => {
-//         event.currentTarget.classList.toggle("selected");
-//         //add function to pull up 
-//     })
-// });
-
-// function isWeekend(day) {
-//     const weekDay = (day % 7);
-//     if (weekDay === 6 || weekDay ===0) return true;
-//     return false;
-// }
-
-// function getDayName(day) {
-//     //                 year, month[], day of the week
-//     const date = new Date(2018, 0, day);
-//     if(day <= 7) {
-//     return new Intl.DateTimeFormat("en-US", { weekday: "short"}).format(date);
-//     } else return "";
-// }
-
-
-
 
 const date = new Date();
 
-const renderCalendar = () => {
+
+renderCalendar();
+getSubs();
+
+function renderCalendar() {
     date.setDate(1);
 
     const monthDays = document.querySelector(".days");
@@ -84,21 +51,46 @@ const renderCalendar = () => {
         days += `<div class="next-date day">${j}</div>`;
         monthDays.innerHTML = days;
     };
+
+    //add a card div to every day that does not display
+    //toggle display onclick
+    //pull all db info into an array in this page, display all that are in this month
+    //    maybe make sidebar one that lists all dues and bills due that month
+    //add icon or color or somehting to days with a bill/other due on that day
+    monthDays.addEventListener("click", () => {
+        console.log("event works!");
+    });
+
 };
 
-// document.querySelector(".previous").addEventListener("click", () => {
-//     date.setMonth(date.getMonth() - 1);
-//     renderCalendar();
-//  });
+document.querySelector(".previous").addEventListener("click", () => {
+    date.setMonth(date.getMonth() - 1);
+    renderCalendar();
+});
 
-// document.querySelector(".next").addEventListener("click", () => {
-//     date.setMonth(date.getMonth() + 1);
-//     renderCalendar();
-// });
+document.querySelector(".next").addEventListener("click", () => {
+    date.setMonth(date.getMonth() + 1);
+    renderCalendar();
+});
 
-// document.querySelector(".day").addEventListener("click", () => {
-//     alert("IT WORKS!")
-//     renderCalendar();
-// });
 
-renderCalendar();
+// function initializeRows() {
+//     $todoContainer.empty();
+//     var rowsToAdd = [];
+//     for (var i = 0; i < todos.length; i++) {
+//       rowsToAdd.push(createNewRow(todos[i]));
+//     }
+//     $todoContainer.prepend(rowsToAdd);
+//   }
+
+//<div class="uk-card pop-up uk-card-default"></div>
+
+  function getSubs() {
+    $.get("/api/users", function(data) {
+      subs = data; //used to be todos
+
+        console.log(subs);
+    //   initializeRows();
+    });
+  }
+
