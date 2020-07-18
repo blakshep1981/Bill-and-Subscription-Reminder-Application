@@ -21,9 +21,13 @@
                     <h3 class="uk-card-title">{{this.name}}</h3>
                     <p><span class="uk-text-success">{{this.amount}} $</span>/Month</p>
                     <p> <span class="uk-text-uppercase uk-text-bold">Due on:</span> {{this.dueDate}} </p>
+                    <button class="delSubscription  uk-button-default" data-id="{{id}}" >delete </button>
                     <hr class="uk-divider-icon">
                     {{/each}}
                 </div>
             </div>
         </div>
 </section>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/list.js"></script>

@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app){
-console.log("sub route api")
+//console.log("sub route api")
 
 app.get("/api/subs",function(req,res){
    
@@ -34,12 +34,10 @@ app.post("/api/subs",function(req, res){
     });
 });
 
-app.delete("/api/subs",function(req,res){
-    db.Subscription.update(
-        req.body,
-        {
+app.delete("/api/subs/:id",function(req,res){
+    db.Subscription.destroy({
             where: {
-                id: req.body.id
+                id: req.params.id
             }
         }).then(function(dbSubs){
             res.json(dbSubs);
