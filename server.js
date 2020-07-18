@@ -14,6 +14,7 @@ var passport = require("./config/passport");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+var morgan = require("morgan");
 // Requiring our models for syncing
 // adding and updating to our database
 var db = require("./models");
@@ -41,7 +42,7 @@ app.use(express.static("public"));
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(morgan("dev"));
 
 // Routes
 // =============================================================
