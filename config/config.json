@@ -2,6 +2,8 @@
     "development": {
       "username": "root",
       "password": "SpaceDandyA80",
+
+
       "database": "bills",
       "host": "127.0.0.1",
       "dialect": "mysql",

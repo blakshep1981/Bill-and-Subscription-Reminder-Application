@@ -4,7 +4,8 @@
   "description": "README.md",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,18 @@
   },
   "homepage": "https://github.com/blakshep1981/Bill-and-Subcription-Reminder-Application#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "moment": "^2.27.0",
     "mysql": "^2.18.1",
-    "sequelize": "^4.41.2"
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "parse": "^2.15.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.41.2",
+    "sequelize-cli": "^6.2.0"
   }
 }

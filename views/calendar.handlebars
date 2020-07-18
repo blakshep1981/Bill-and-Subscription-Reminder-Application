@@ -1,0 +1,57 @@
+<!-- Top navbar -->
+<!-- Nav to diff pages we may have -->
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/calendar">Calendar View</a></li>
+            <li><a href="/list">Current Subscriptions</a></li>
+            <li><a href="/subscription">Add New Subscription</a></li>
+            <li><a href="/logout"><button class="uk-button uk-text-bold uk-align-right uk-button-default">Logout</button></a></li>            
+        </ul>
+
+    </div>
+</nav>
+
+
+    <div class="container">
+
+        {{!-- <div class="side-bar">
+            <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                {{#each dbSubs}}
+                    <h3 class="uk-card-title">{{this.name}}</h3>
+                    <p><span class="uk-text-success">{{this.amount}} $</span>/Month</p>
+                    <p> <span class="uk-text-uppercase uk-text-bold">Due on:</span> {{this.dueDate}} </p>
+                    <hr class="uk-divider-icon">
+                    {{/each}}
+            </div>
+        </div> --}}
+
+        <div class="calendar">
+            <div class="month">
+                <i class="fas fa-angle-left previous"></i>
+                <div class="date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="wrapper weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+                
+            </div>
+        </div>
+    </div>
+
+<div id="app-calendar"></div>
+
+
+<script type="text/javascript" src="/assets/js/calendar.js"></script>

@@ -3,4 +3,13 @@ DROP TABLE IF EXISTS bills;
 -- creates the bills database --
 CREATE DATABASE bills;
 
--- USE billpay;
+USE bills;
+
+CREATE TABLE subscriptions
+(
+	id int NOT NULL AUTO_INCREMENT,
+	subscription varchar(255) NOT NULL,
+	amount DECIMAL(10,2) NOT NULL,
+    dueDate DATE,
+	PRIMARY KEY (id)
+);
