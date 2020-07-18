@@ -1,4 +1,5 @@
 const path = require("path");
+const db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -27,12 +28,33 @@ module.exports = function(app){
     if (req.user) {
       res.render("list");
     }
+<<<<<<< HEAD
     // res.render("list");
   });
 
   app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/');
+=======
+   // res.render("list");
+    var subs = {};
+    //console.log(req.subs)
+    // if (req.subs._id){ //would regulate data to specific client
+    //     console.log(req.subs)
+    //     subs.name = req.subs._id;
+    // } //that list pertains to just one client the if statement was there to regulate what info was to be shown if the id were to a specific client with a specific id
+    db.Subscription.findAll({ //shmaybe the association of tables that doesnt give AUthorId=Author . id
+        where: subs,raw: true//,
+      //  include: [db.Subscription], //grabbing now from subdatabase
+    }).then(function(dbSubs){
+      
+      console.log("we go the data now lets move");
+        // console.log(dbSubs)
+      res.render("list",{dbSubs: dbSubs});
+  
+ 
+    });
+>>>>>>> a662a959f5400348c1e65276b6fd6de4d7055340
   });
 
   app.get("/signup", function(req, res) {

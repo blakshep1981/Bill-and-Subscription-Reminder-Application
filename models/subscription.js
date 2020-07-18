@@ -10,11 +10,11 @@ module.exports= function(sequelize, DataTypes) {
       },
       dueDate: {
         type: DataTypes.DATE,
-        allowNull: false 
+        allowNull: false
       }
     });
     Subscription.associate = function(models) {
-    // We're saying that a Subscription should belong to a User
+    // We're saying that a Subscription should belong to a User 
     // A Subscription can't be created without a User due to the foreign key constraint
     Subscription.belongsTo(models.User, {
       foreignKey: {
@@ -24,3 +24,4 @@ module.exports= function(sequelize, DataTypes) {
   };
   return Subscription;
 };
+//because ive tried to change my sequelize table from DATE to DATEONLY where it would only get me the date and no the 

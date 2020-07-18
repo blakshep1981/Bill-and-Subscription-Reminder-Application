@@ -2,7 +2,11 @@
     "development": {
       "username": "root",
 
+<<<<<<< HEAD
       "password": "P@ssword!",
+=======
+      "password": "SpaceDandyA80",
+>>>>>>> a662a959f5400348c1e65276b6fd6de4d7055340
 
       "database": "bills",
       "host": "127.0.0.1",
