@@ -1,16 +1,3 @@
-:root {
-    --light-gray: #DADCE0;
-    --light-blue: #1B9CE2;
-}
-body {
-    margin: 0;
-}
-
-#app-calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-}
 
 /* Sign up */
 .sign-up-input{
@@ -19,26 +6,126 @@ body {
 }
 
 /* Calendar */
-.day {
-    border-bottom: 1px solid var(--light-gray);
-    border-right: 1px solid var(--light-gray);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .container {
+    width: 100%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/*  transfer over please */
+  .billSubs{
+  text-align: center;
+  }
+  
+  .calendar {
+    width: 45rem;
+    height: 52rem;
+    background-color: white;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .month {
+    width: 100%;
+    height: 12rem;
+    background-color: slategray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
     text-align: center;
-    padding-top: 5px;
-    font-size: 12px;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-logout {
+    width: 100%;
+    padding: 3px 20px !important;
+    text-align: left !important;
+  }
+  
+  .month i {
+    font-size: 2.5rem;
     cursor: pointer;
-    transition: background-color 200ms, color 200ms;
-    
-}
+  }
+  
+  .month h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .month p {
+    font-size: 1.6rem;
+  }
+  
+  .weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .weekdays div {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    width: calc(44.2rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.name {
-    padding-bottom: 5px;
-}
+  }
+  
+  .days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+  }
+  
+  .days div {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(40.2rem / 7);
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .days div:hover:not(.today) {
+    background-color: darkslategray;
+    border: 0.2rem solid gray;
+    cursor: pointer;
+  }
+  
+  .prev-date,
+  .next-date {
+    opacity: 0.5;
+  }
+  
+  .today {
+    background-color: lightslategray;
+  }
 
-.weekend {
-    color: var(--light-blue);
-}
+  .side-bar {
+    height: 100%;
+    display: flex;
+  }
 
-.selected {
-    color: white;
-    background-color: blue;
-}
+  /* New Subs Form */
+  form {
+    align-content: center;
+    text-align: center;
+  }
