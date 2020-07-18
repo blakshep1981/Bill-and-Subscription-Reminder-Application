@@ -17,9 +17,9 @@ console.log("your on the click")
   const newSub = {
     name: subInput.val().trim(),
     amount: amountInput.val().trim(),
-    dueDate: moment(dueInput.val().trim()).format("MM/DD/YYYY")
+    dueDate: dueInput.val().trim()
   };
-console.log(dueDate)
+console.log("due input",newSub) // here is the console.
     submitSubscription(newSub);
 };
 })
@@ -29,7 +29,7 @@ function submitSubscription(Sub){
   // send an AJAX POST-request with jQuery
   $.post("/api/subs", Sub, function(){
 
-      console.log(Sub);
+      //console.log(Sub);
       // tell the user we're adding a subscription with an alert window
      //alert("Adding subscription...");
       if(err){

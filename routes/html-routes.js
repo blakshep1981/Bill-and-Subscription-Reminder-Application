@@ -9,11 +9,11 @@ module.exports = function(app){
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the calendar page
-    console.log("above if block");
+    //console.log("above if block");
     if (req.user) {
       res.render("index");
     }
-    console.log("below if block");
+  //  console.log("below if block");
     res.render("index");
   });
 
@@ -34,12 +34,12 @@ module.exports = function(app){
     //     subs.name = req.subs._id;
     // } //that list pertains to just one client the if statement was there to regulate what info was to be shown if the id were to a specific client with a specific id
     db.Subscription.findAll({ //shmaybe the association of tables that doesnt give AUthorId=Author . id
-        where: subs,raw: true//,
+        where: subs, raw: true//,
       //  include: [db.Subscription], //grabbing now from subdatabase
     }).then(function(dbSubs){
       
-      console.log("we go the data now lets move");
-        // console.log(dbSubs)
+     // console.log("we go the data now lets move");
+      // console.log(dbSubs)
       res.render("list",{dbSubs: dbSubs});
   
  

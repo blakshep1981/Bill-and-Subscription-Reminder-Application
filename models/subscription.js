@@ -12,6 +12,7 @@ module.exports= function(sequelize, DataTypes) {
         type: DataTypes.DATE,
         allowNull: false
       }
+      
     });
     Subscription.associate = function(models) {
     // We're saying that a Subscription should belong to a User 
@@ -24,4 +25,3 @@ module.exports= function(sequelize, DataTypes) {
   };
   return Subscription;
 };
-//because ive tried to change my sequelize table from DATE to DATEONLY where it would only get me the date and no the 
