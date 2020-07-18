@@ -86,15 +86,15 @@ const renderCalendar = () => {
     };
 };
 
-document.querySelector(".previous").addEventListener("click", () => {
-    date.setMonth(date.getMonth() - 1);
-    renderCalendar();
-});
+// document.querySelector(".previous").addEventListener("click", () => {
+//     date.setMonth(date.getMonth() - 1);
+//     renderCalendar();
+//  });
 
-document.querySelector(".next").addEventListener("click", () => {
-    date.setMonth(date.getMonth() + 1);
-    renderCalendar();
-});
+// document.querySelector(".next").addEventListener("click", () => {
+//     date.setMonth(date.getMonth() + 1);
+//     renderCalendar();
+// });
 
 // document.querySelector(".day").addEventListener("click", () => {
 //     alert("IT WORKS!")

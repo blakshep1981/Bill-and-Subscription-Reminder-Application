@@ -19,13 +19,16 @@ module.exports = function(app){
 
   app.get("/calendar", function(req, res) {
     if (req.user) {
+      res.render("calendar");
     }
-    res.render("calendar");
+    // res.render("calendar");
   });
 
   app.get("/list", function(req, res) {
     if (req.user) {
+      res.render("list");
     }
+
    // res.render("list");
     var subs = {};
     //console.log(req.subs)
@@ -44,6 +47,14 @@ module.exports = function(app){
   
  
     });
+
+    // res.render("list");
+  });
+
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+
   });
 
   app.get("/signup", function(req, res) {
@@ -55,8 +66,9 @@ module.exports = function(app){
 
   app.get("/subscription", function(req, res) {
     if (req.user) {
+      res.render("subscription");
     }
-     res.render("subscription");
+    //  res.redirect("/");
   });
   
 }

@@ -35,6 +35,12 @@
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
   }
+
+  .btn-logout {
+    width: 100%;
+    padding: 3px 20px !important;
+    text-align: left !important;
+  }
   
   .month i {
     font-size: 2.5rem;
