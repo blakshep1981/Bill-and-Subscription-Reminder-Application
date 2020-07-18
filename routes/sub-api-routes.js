@@ -1,27 +1,29 @@
 var db = require("../models");
 
 module.exports = function(app){
-console.log("sub route api")
+//console.log("sub route api")
 
 app.get("/api/subs",function(req,res){
-    var subs = {};
-    if (req.subs.user_id){
-        subs.UserId = req.subs.user_id;
-    }
-    db.Subscription.findAll({
-        where: subs,
-        include: [db.User],
-    }).then(function(dbSubs){
-        res.json(dbSubs)
-    });
+   
+     var subs = {};
+
+     db.Subscription.findAll({ //shmaybe the association of tables that doesnt give AUthorId=Author . id
+         where: subs,
+      //include: [db.Subscription], //grabbing now from subdatabase
+     }).then(function(dbSubs){
+         res.json( dbSubs);
+  
+     });
+    
 });
+
 app.get("/api/subs/:id", function(req,res){
     db.Subscription.findOne({
         where: {
             id: req.params.id
         },
         include: [db.User]
-    }).then(function(dbPost){
+    }).then(function(dbSubs){
         res.json(dbSubs)
     });
 });
@@ -32,12 +34,10 @@ app.post("/api/subs",function(req, res){
     });
 });
 
-app.delete("/api/subs",function(req,res){
-    db.Subscription.update(
-        req.body,
-        {
+app.delete("/api/subs/:id",function(req,res){
+    db.Subscription.destroy({
             where: {
-                id: req.body.id
+                id: req.params.id
             }
         }).then(function(dbSubs){
             res.json(dbSubs);

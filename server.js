@@ -42,6 +42,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Routes
 // =============================================================
 //require("./routes/post-api-routes.js")(app);
@@ -56,3 +57,4 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
