@@ -1,8 +1,8 @@
 {
     "development": {
       "username": "root",
+      "password": "SpaceDandyA80",
 
-      "password": "P@ssword!",
 
       "database": "bills",
       "host": "127.0.0.1",
