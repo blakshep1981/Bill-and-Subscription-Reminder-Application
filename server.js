@@ -13,7 +13,7 @@ var passport = require("./config/passport");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
-
+var morgan = require("morgan");
 // Requiring our models for syncing
 // adding and updating to our database
 var db = require("./models");
@@ -24,7 +24,7 @@ app.use(express.static("public"));
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(morgan("dev"));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
