@@ -20,16 +20,25 @@ module.exports = function(app){
   app.get("/calendar", function(req, res) {
     if (req.user) {
       res.render("calendar");
+      
+      var subs = {};
+          db.Subscription.findAll({
+          where: subs, raw: true
+      }).then(function(dbSubs){
+
+        res.render("calendar",{dbSubs: dbSubs});
+        console.log(subs)
+   
+      });
     }
     // res.render("calendar");
   });
 
   app.get("/list", function(req, res) {
     if (req.user) {
-      res.render("list");
-    }
+      // res.render("list");
 
-   // res.render("list");
+      // res.render("list");
     var subs = {};
     //console.log(req.subs)
     // if (req.subs._id){ //would regulate data to specific client
@@ -47,6 +56,9 @@ module.exports = function(app){
   
  
     });
+    }
+
+   
 
     // res.render("list");
   });
